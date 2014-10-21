@@ -3,14 +3,18 @@
 $body-bg: 										#ecf0f1;
 $font-family-sans-serif: 			'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $navbar-height:								60px;
-$navbar-default-bg: 					#f39c12;
-$navbar-default-brand-color: 	white;
+$navbar-default-bg: 					#f1c40f;
+$navbar-default-brand-color: 	black;
 $brand-primary: 							#c0392b;
 $jumbotron-bg: 								white;
 
 @import 'bootstrap';
 
 .new-request {
+	color: black;
+}
+
+#about-button {
 	color: white;
 }
 
