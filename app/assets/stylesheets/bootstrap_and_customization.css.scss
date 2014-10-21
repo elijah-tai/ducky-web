@@ -10,6 +10,14 @@ $jumbotron-bg: 								white;
 
 @import 'bootstrap';
 
+.new-request {
+	color: white;
+}
+
+.new-request:hover {
+	color: black;
+}
+
 .center {
 	text-align: center;
 }

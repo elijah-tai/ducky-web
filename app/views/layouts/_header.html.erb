@@ -14,18 +14,20 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li>
-              <%= link_to new_pin_path do %>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to new_pin_path do %>
+              <div class="new-request">
                 <span class="glyphicon glyphicon-plus"></span> New Request
-              <% end %>
-            </li>
+              </div>
+            <% end %>
+          </li>
             <li><%= link_to "Account Settings", edit_user_registration_path %></li>
             <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
-          <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "About", about_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
