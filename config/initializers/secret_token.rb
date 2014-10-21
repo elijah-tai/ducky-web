@@ -1,0 +1,1 @@
+Getducky::Application.config.secret_key_base = "b8de8eefcfaa1949dfb7432bc8efff2884e2bd20f4c3ebc2a0ff5aa14c6c39417d3b067bfabea3058af290309990e08b0c8f588a85b18261f093dad286e02bee"
