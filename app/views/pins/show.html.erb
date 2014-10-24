@@ -8,7 +8,7 @@
 		</div>
 		<div class="panel-body center">
 		<h4><%= @pin.description %></h4>
-		<p>Location: <%= pin.location %></p>
+		<p>Location: <%= @pin.location %></p>
 		<p><strong><%= @pin.user.name if @pin.user %></strong></p>
 
 		<% if @pin.user == current_user %>
