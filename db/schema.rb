@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20141024061844) do
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
-    t.integer  "pins", ["contact"], name: "add_contact_to_users"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
