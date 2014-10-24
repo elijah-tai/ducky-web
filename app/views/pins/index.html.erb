@@ -8,7 +8,7 @@
         <p><%= pin.description %></p>
         <p><b>Location:</b> <%= pin.location %></p>
         <p><b>Phone #:</b> <%= pin.user.phone %></p>
-        <p><strong><%= pin.user.name if pin.user %></strong></p>
+        <p><b>Posted by:</b> <i><%= pin.user.name if pin.user %></i></p>
         
         <% if current_user && pin.user == current_user %>
           <div class="actions">
