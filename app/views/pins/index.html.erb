@@ -6,8 +6,8 @@
       <%= link_to image_tag(pin.image.url(:medium)), pin %>
       <div class="panel-body">
         <p><%= pin.description %></p>
-        <p><em>Location: <%= pin.location %></em></p>
-        <p><u>Phone #: <%= pin.user.phone %></u></p>
+        <p><b>Location:</b> <%= pin.location %></p>
+        <p><b>Phone #:</b> <%= pin.user.phone %></p>
         <p><strong><%= pin.user.name if pin.user %></strong></p>
         
         <% if current_user && pin.user == current_user %>
