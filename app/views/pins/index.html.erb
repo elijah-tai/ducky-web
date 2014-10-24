@@ -7,6 +7,7 @@
       <div class="panel-body">
         <p><%= pin.description %></p>
         <p>Location: <%= pin.location %></p>
+        <p>Phone #: <%= pin.user.phone %></p>
         <p><strong><%= pin.user.name if pin.user %></strong></p>
         
         <% if current_user && pin.user == current_user %>
