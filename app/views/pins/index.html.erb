@@ -9,7 +9,7 @@
         <p><b>Location:</b> <%= pin.location %></p>
         <p><b>Phone #:</b> <%= pin.user.phone %></p>
         <p><b>Posted by:</b> <i><%= pin.user.name if pin.user %></i></p>
-        
+        <p><b>On: </b> <%= pin.created_at %> </p>
         <% if current_user && pin.user == current_user %>
           <div class="actions">
             <%= link_to edit_pin_path(pin) do %>

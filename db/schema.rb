@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20141024072241) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "contact"
     t.string   "phone"
   end
 

@@ -11,7 +11,7 @@
 		<p><b>Location:</b> <%= @pin.location %></p>
 		<p><b>Phone #:</b> <%= @pin.user.phone %></p>
 		<p><b>Posted by:</b> <i><%= @pin.user.name if @pin.user %></i></p>
-
+		<p><b>On: </b> <%= pin.created_at %> </p>
 		<% if @pin.user == current_user %>
 			<%= link_to edit_pin_path(@pin) do %>
         <span class="glyphicon glyphicon-edit"></span>
