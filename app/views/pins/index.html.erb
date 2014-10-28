@@ -4,11 +4,7 @@
   <% @pins.each do |pin| %>
     <div class="requests-view">
       <div class="box panel panel-default">
-<<<<<<< HEAD
         <%= link_to get_image(pin.image.url(:medium)), pin %>
-=======
-        <%= link_to image_tag(pin.image.url(:medium)), pin %>
->>>>>>> 444f65b5320054a7580e7556a4795de041dea170
         <div class="panel-body">
           <p><%= pin.description %></p>
           <p><b>Location:</b> <%= pin.location %></p>
