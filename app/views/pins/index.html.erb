@@ -2,28 +2,30 @@
 
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
-    <div class="box panel panel-default">
-      <%= link_to image_tag(pin.image.url(:medium)), pin %>
-      <div class="panel-body">
-        <p><%= pin.description %></p>
-        <p><b>Location:</b> <%= pin.location %></p>
-        <p><b>Phone #:</b> <%= pin.user.phone %></p>
-        <p><b>Posted by:</b> <i><%= pin.user.name if pin.user %></i></p>
-        <p><b>On: </b> <%= pin.created_at.strftime("%a, %b, %g at %u:%M %P") %> </p>
-        <% if current_user && pin.user == current_user %>
-          <div class="actions">
-            <%= link_to edit_pin_path(pin) do %>
-              <span class="glyphicon glyphicon-pencil"></span>
-              Edit
-            <% end %>
-            ||
-            <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-remove"></span>
-              Cancel
-            <% end %>
-          </div>
-        <% end %>
-        
+    <div class="requests-view">
+      <div class="box panel panel-default">
+        <%= link_to image_tag(pin.image.url(:medium)), pin %>
+        <div class="panel-body">
+          <p><%= pin.description %></p>
+          <p><b>Location:</b> <%= pin.location %></p>
+          <p><b>Phone #:</b> <%= pin.user.phone %></p>
+          <p><b>Posted by:</b> <i><%= pin.user.name if pin.user %></i></p>
+          <p><b>On: </b> <%= pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
+          <% if current_user && pin.user == current_user %>
+            <div class="actions">
+              <%= link_to edit_pin_path(pin) do %>
+                <span class="glyphicon glyphicon-pencil"></span>
+                Edit
+              <% end %>
+              ||
+              <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-remove"></span>
+                Cancel
+              <% end %>
+            </div>
+          <% end %>
+          
+        </div>
       </div>
     </div>
   <% end %>
