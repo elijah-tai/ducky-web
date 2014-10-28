@@ -1,12 +1,18 @@
-<%= link_to 'Back', pins_path %>
-
 <div class="row">
 	<div class="col-md-offset-2 col-md-8">
-		<div class="panel panel-tertiary">
+		<div class="panel panel-default">
+			<div id="show-back-button">
+				<%= link_to pins_path do %>
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					Back
+					<% end %>
+			</div>
+				
 		<div class="panel-heading center">
-			<%= image_tag @pin.image.url(:medium) %>
+			<%= get_image(@pin.image.url(:medium)) %>
 		</div>
-		<div class="panel-body center">
+
+		<div class="panel-body">
 		<h4><%= @pin.description %></h4>
 		<p><b>Location:</b> <%= @pin.location %></p>
 		<p><b>Phone #:</b> <%= @pin.user.phone %></p>
@@ -14,7 +20,7 @@
 		<p><b>On: </b> <%= @pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
 		<% if @pin.user == current_user %>
 			<%= link_to edit_pin_path(@pin) do %>
-        <span class="glyphicon glyphicon-edit"></span>
+        <span class="glyphicon glyphicon-pencil"></span>
         Edit
       <% end %>
 		<% end %>

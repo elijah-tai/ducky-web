@@ -1,7 +1,22 @@
 <% provide(:action, "Edit Request") %>
-<h1>Editing Request</h1>
+<div class="panel panel-default">
+	<div class="panel panel-heading">
+		<h1>Editing Request</h1>
+	</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+<div class="panel panel-body">
+	<div class="actions">
+		<%= link_to pins_path do %>
+			<span class="glyphicon glyphicon-chevron-left"></span>
+			Back
+		<% end %>
+
+||
+
+		<%= link_to @pin do %>
+			<span class="glyphicon glyphicon-eye-open"></span>
+			See Request
+		<% end %>
+</div>
