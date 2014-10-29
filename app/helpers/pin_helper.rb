@@ -15,11 +15,11 @@ module PinHelper
   	#This will be rare if the users aren't fudging up the spacebar
   	#and are not deliberately trying to screw with things
     
-    #The textbox can comfortably fit 16 m characters or like 50 i's
+    #The textbox can comfortably fit 15 m characters or like 50 i's
     desc_array = req_desc.split(" ")
     desc_array.each do |word|
     	
-    	mult15 = (word.length/15).floor #Length of word in multiples of 16. A 34 character word as a mult16 length of 2
+    	mult15 = (word.length/15).floor #Length of word in multiples of 15. A 34 character word as a mult15 length of 2
     	
     	if mult15 > 0
 
