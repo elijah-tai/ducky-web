@@ -18,16 +18,16 @@
           <li>
             <%= link_to new_pin_path do %>
               <div class="new-request">
-                <span class="glyphicon glyphicon-plus"></span> New Request
+                <span class="glyphicon glyphicon-plus"></span> new request
               </div>
             <% end %>
           </li>
-            <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "settings", edit_user_registration_path %></li>
+            <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-              <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Log In", new_user_session_path %></button></li>
+              <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "login", new_user_session_path %></button></li>
           <% end %>
-            <li><%= link_to "How-To", about_path %></li>
+            <li><%= link_to "how-to", about_path %></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
