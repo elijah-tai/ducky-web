@@ -6,11 +6,15 @@
       <div class="box panel panel-default">
         <%= link_to get_image(pin.image.url(:medium)), pin %>
         <div class="panel-body">
-          <p><%= pin.description %></p>
-          <p><b>Location:</b> <%= pin.location %></p>
-          <p><b>Phone #:</b> <%= pin.user.phone %></p>
-          <p><b>Posted by:</b> <i><%= pin.user.name if pin.user %></i></p>
-          <p><b>On: </b> <%= pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
+            <%= simple_format(format_output(pin.description))%>
+          <b>Location:</b> 
+            <%= simple_format(format_output(pin.location))%>
+          <b>Phone #:</b> 
+            <%= simple_format(format_output(pin.user.phone)) %>
+          <b>Posted by:</b> 
+            <i><%= simple_format(format_output(pin.user.name)) if pin.user %></i>
+          <b>On: </b> 
+            <p><%= pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
           <% if current_user && pin.user == current_user %>
             <div class="actions">
               <%= link_to edit_pin_path(pin) do %>
