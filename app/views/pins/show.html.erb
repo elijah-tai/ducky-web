@@ -18,6 +18,7 @@
 		<p><b>Phone #:</b> <%= @pin.user.phone %></p>
 		<p><b>Posted by:</b> <i><%= @pin.user.name if @pin.user %></i></p>
 		<p><b>On: </b> <%= @pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
+    <p><b>Expires: </b> </p>
 		<% if @pin.user == current_user %>
 			<%= link_to edit_pin_path(@pin) do %>
         <span class="glyphicon glyphicon-pencil"></span>
