@@ -17,7 +17,7 @@ module PinHelper
     
     #The textbox can comfortably fit 15 m characters or like 50 i's
     desc_array = req_desc.try(:split, " ")
-    desc_array.each do |word|
+    desc_array.try(:each) do |word|
     	
     	mult15 = (word.length/15).floor #Length of word in multiples of 15. A 34 character word as a mult15 length of 2
     	
