@@ -29,7 +29,7 @@ module PinHelper
 
    	 	end
     end
-    description = desc_array.join(" ")
+    description = desc_array.try(:join, " ")
     return description
   end 
 end
