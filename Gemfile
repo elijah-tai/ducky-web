@@ -20,11 +20,13 @@ gem 'twilio-ruby'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'foreman'
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'foreman'
 end
 
 group :doc do
