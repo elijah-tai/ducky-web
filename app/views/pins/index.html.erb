@@ -1,6 +1,6 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<div id="pins" class="transitions-enabled">
+<div id="pins" class="transitions-enabled justify">
   <% @pins.each do |pin| %>
     <div class="requests-view">
       <div class="box panel panel-default">
