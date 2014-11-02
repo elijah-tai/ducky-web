@@ -80,7 +80,7 @@ Getducky::Application.configure do
 
   # Required for Heroku
   # Note to set this to your actual host
-  config.action_mailer.default_url_options = { :host => 'getducky.herokuapps.com' }
+  config.action_mailer.default_url_options = { :host => 'getducky.herokuapp.com' }
 
   # Sets Paperclip to upload images to Amazon S3
   config.paperclip_defaults = {
