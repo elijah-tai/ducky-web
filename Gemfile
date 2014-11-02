@@ -21,15 +21,12 @@ gem 'mailcatcher'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'foreman'
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-end
-
-group :test, :development do
-	gem 'foreman'
 end
 
 group :doc do
