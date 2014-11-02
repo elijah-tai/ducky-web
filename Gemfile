@@ -17,6 +17,7 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'twilio-ruby'
+gem 'mailcatcher'
 
 group :development, :test do
 	gem 'sqlite3'
@@ -25,6 +26,10 @@ end
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+end
+
+group :test, :development do
+	gem 'foreman'
 end
 
 group :doc do
