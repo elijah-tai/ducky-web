@@ -31,7 +31,10 @@
               <% end %>
             </div>
           <% end %>
-          
+
+          # Will show if the pin is not the current_user's
+          <% if current_user && pin.user != current_user %>
+          <% end %>
         </div>
       </div>
     </div>

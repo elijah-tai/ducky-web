@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  resources :pins
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
+  resources :pins
+  
   root 'pins#index'
   get 'about'=>'pages#about'
 
