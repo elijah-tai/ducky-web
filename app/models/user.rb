@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable,
-  :confirmable, :omniauthable, :omniauth_providers => [:facebook],
+  :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :pins, dependent: :destroy
 
