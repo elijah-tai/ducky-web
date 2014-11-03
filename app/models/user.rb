@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   validates :phone, length: { is: 10 }
   validates :phone, numericality: { only_integer: true } 
 
-
+  acts_as_messageable
 end
