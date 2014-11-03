@@ -17,7 +17,7 @@
           <b>Posted by:</b> 
             <i><%= simple_format(format_output(pin.user.name)) if pin.user %></i>
           <b>On: </b> 
-            <p><%= pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
+            <p><%= pin.created_at.strftime("%m/%d/%y %l:%M %p") %> UTC </p>
           <% if current_user && pin.user == current_user %>
             <div class="actions">
               <%= link_to edit_pin_path(pin) do %>
@@ -32,7 +32,7 @@
             </div>
           <% end %>
 
-          # Will show if the pin is not the current_user's
+<!--           # Will show if the pin is not the current_user's -->
           <% if current_user && pin.user != current_user %>
           <% end %>
         </div>
