@@ -10,8 +10,16 @@ $jumbotron-bg: 								white;
 
 @import 'bootstrap';
 
+body {
+	padding-top: 70px;
+}
+
 .new-request {
 	color: black;
+}
+
+.navbar-header {
+	font-weight: 600px
 }
 
 .panel-default {
