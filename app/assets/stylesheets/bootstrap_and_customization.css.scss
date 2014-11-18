@@ -15,7 +15,12 @@ body {
 }
 
 .navbar-brand {
-	padding-top: 15px;
+  // Vertically center the text given $navbarHeight
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.navbar {
 }
 
 .new-request {
