@@ -2,16 +2,20 @@
 
 $body-bg: 										#ecf0f1;
 $font-family-sans-serif: 			'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$navbar-height:								50px;
+$navbar-height:								35px;
 $navbar-default-bg: 					#f1c40f;
 $navbar-default-brand-color: 	black;
 $brand-primary: 							#c0392b;
-$jumbotron-bg: 								white;
+$jumbotron-bg: 								white;		
 
 @import 'bootstrap';
 
 body {
 	padding-top: 70px;
+}
+
+.navbar-brand {
+	padding-top: 15px;
 }
 
 .new-request {
@@ -26,9 +30,7 @@ body {
 	font-weight: 600px;
 }
 
-#login-button {
-	position: relative;
-	top: 0px;
+.navbar-button {
 }
 
 .panel-default {

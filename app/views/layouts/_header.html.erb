@@ -1,5 +1,5 @@
 <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-  <div class="container">
+  <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -8,26 +8,54 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Ducky", root_path, class: "navbar-brand" %>
+      <%= link_to root_path do %>
+       <div class="navbar-brand">
+        Ducky
+       </div>
+      <% end %>
     </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
           <li>
             <%= link_to new_pin_path do %>
-              <div class="new-request">
+              <div class="btn new-request">
                 <span class="glyphicon glyphicon-plus"></span> New Request
               </div>
             <% end %>
           </li>
-            <li><%= link_to "Settings", edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                  <div class="btn navbar-btn">
+                    Settings
+                  </div>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                  <div class="btn navbar-btn">
+                    Logout
+                  </div>
+              <% end %>
+            </li>
           <% else %>
-              <li><button type="button" id="login-button"><%= link_to "Login", new_user_session_path, class: "btn navbar-btn"%></button></li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <div class="btn btn-primary navbar-btn">
+                    Login
+                  </div>
+                <% end %>
+              </li>
           <% end %>
-            <li><%= link_to "How-To", about_path %></li>
+            <li>
+              <%= link_to about_path do %>
+                  <div class="btn btn-default navbar-btn">
+                    How-To
+                  </div>
+              <% end %>
+            </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
