@@ -25,7 +25,7 @@
             <li><%= link_to "Settings", edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-              <li><button type="button" class="btn btn-default navbar-btn"><%= link_to "Login", new_user_session_path %></button></li>
+              <li><button type="button" id="login-button"><%= link_to "Login", new_user_session_path, class: "btn navbar-btn"%></button></li>
           <% end %>
             <li><%= link_to "How-To", about_path %></li>
       </ul>

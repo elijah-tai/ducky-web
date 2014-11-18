@@ -23,7 +23,12 @@ body {
 }
 
 .navbar-header {
-	font-weight: 600px
+	font-weight: 600px;
+}
+
+#login-button {
+	position: relative;
+	top: 0px;
 }
 
 .panel-default {
