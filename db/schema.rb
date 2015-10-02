@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151002195412) do
+ActiveRecord::Schema.define(version: 20151002220310) do
 
   create_table "installs", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20151002195412) do
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
 
-  create_table "pins", force: true do |t|
+  create_table "requests", force: true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 20151002195412) do
     t.string   "location"
   end
 
-  add_index "pins", ["user_id"], name: "index_pins_on_user_id"
+  add_index "requests", ["user_id"], name: "index_requests_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

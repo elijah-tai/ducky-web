@@ -1,5 +1,5 @@
 module IndexHelper
-	def format_output(req_desc) #Gets pin.description
+	def format_output(req_desc) #Gets request.description
   	#The purpose of this function is to prevent overflow of the text
   	#box due to extremely long words
   	#This will be rare if the users aren't fudging up the spacebar

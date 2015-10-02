@@ -1,14 +1,14 @@
 require 'test_helper'
 
-class PinsControllerTest < ActionController::TestCase
+class requestsControllerTest < ActionController::TestCase
   setup do
-    @pin = pins(:one)
+    @request = requests(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:pins)
+    assert_not_nil assigns(:requests)
   end
 
   test "should get new" do
@@ -16,34 +16,34 @@ class PinsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create pin" do
-    assert_difference('Pin.count') do
-      post :create, pin: { description: @pin.description }
+  test "should create request" do
+    assert_difference('request.count') do
+      post :create, request: { description: @request.description }
     end
 
-    assert_redirected_to pin_path(assigns(:pin))
+    assert_redirected_to request_path(assigns(:request))
   end
 
-  test "should show pin" do
-    get :show, id: @pin
+  test "should show request" do
+    get :show, id: @request
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @pin
+    get :edit, id: @request
     assert_response :success
   end
 
-  test "should update pin" do
-    patch :update, id: @pin, pin: { description: @pin.description }
-    assert_redirected_to pin_path(assigns(:pin))
+  test "should update request" do
+    patch :update, id: @request, request: { description: @request.description }
+    assert_redirected_to request_path(assigns(:request))
   end
 
-  test "should destroy pin" do
-    assert_difference('Pin.count', -1) do
-      delete :destroy, id: @pin
+  test "should destroy request" do
+    assert_difference('request.count', -1) do
+      delete :destroy, id: @request
     end
 
-    assert_redirected_to pins_path
+    assert_redirected_to requests_path
   end
 end

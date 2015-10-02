@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class PinsHelperTest < ActionView::TestCase
+class requestsHelperTest < ActionView::TestCase
 end

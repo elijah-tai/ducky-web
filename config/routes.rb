@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   devise_for :installs
-  root 'pins#index'
+  root 'requests#index'
   get 'about'=>'pages#about'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :pins
+  resources :requests
   resources :users, only: [:index]
   resources :conversations, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create]

@@ -1,6 +1,6 @@
-class AddUserIdToPins < ActiveRecord::Migration
+class AddUserIdTorequests < ActiveRecord::Migration
   def change
-    add_column :pins, :user_id, :integer
-    add_index :pins, :user_id
+    add_column :requests, :user_id, :integer
+    add_index :requests, :user_id
   end
 end

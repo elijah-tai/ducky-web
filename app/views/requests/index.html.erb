@@ -1,0 +1,51 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
+<h4 class="center"><h3><span class="label label-default center">Current unfulfilled requests:</span></h3> </h4>
+
+
+<div id="requests" class="transitions-enabled justify">
+  <% @requests.each do |request| %>
+    <div class="requests-view justify">
+      <div class="box panel panel-default justify">
+        <%= link_to get_image(request.image.url(:medium)), request %>
+        <div class="panel-body">
+            <%= simple_format(format_output(request.description))%>
+          <b>Location:</b> 
+            <%= simple_format(format_output(request.location))%>
+          <b>Posted by:</b> 
+            <i><%= simple_format(format_output(request.user.name)) if request.user %></i>
+          <b>On: </b> 
+            <p><%= request.created_at.strftime("%m/%d/%y %l:%M %p") %> UTC </p>
+          
+          <strong><%= request.user.email %></strong>
+          <% link_to 'Send message', new_message_path(to: request.user.id), class: 'btn btn-default btn-sm' %>
+          
+          <% if current_user && request.user == current_user %>
+            <div class="actions">
+              <%= link_to edit_request_path(request) do %>
+                <span class="glyphicon glyphicon-pencil"></span>
+                Edit
+              <% end %>
+              ||
+              <%= link_to request, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-remove"></span>
+                Cancel
+              <% end %>
+            </div>
+          <% end %>
+          <% link_to new_message_path(to: request.user.id) do %>
+            Send message
+          <% end %>
+
+<!--           # Will show if the request is not the current_user's -->
+          <% if current_user && request.user != current_user %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+</div>

@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable,
   :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :pins, dependent: :destroy
+  has_many :requests, dependent: :destroy
 
   validates :name, presence: true
   validates :phone, length: { is: 10 }

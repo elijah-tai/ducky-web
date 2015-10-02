@@ -1,12 +1,12 @@
-<%= form_for @pin, html: { multipart: true } do |f| %>
+<%= form_for @request, html: { multipart: true } do |f| %>
 
 <div class="panel-body">
-    <% if @pin.errors.any? %>
+    <% if @request.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@pin.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
 
       <ul>
-      <% @pin.errors.full_messages.each do |msg| %>
+      <% @request.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
