@@ -37,6 +37,7 @@ Getducky::Application.configure do
 
   # Set up devise for use on local machine
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.perform_deliveries = true
 
   # # Raises error for errors when sending email
   # config.action_mailer.raise_delivery_errors = true

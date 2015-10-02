@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true
   validates :phone, length: { is: 10 }
-  validates :phone, numericality: { only_integer: true } 
+  validates :phone, numericality: { only_integer: true }
+
+  acts_as_messageable 
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

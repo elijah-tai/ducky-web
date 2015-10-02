@@ -18,6 +18,8 @@ gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
 gem 'twilio-ruby'
 gem 'omniauth-facebook'
+gem 'mailboxer'
+gem 'gravatar_image_tag'
 
 group :development, :test do
 	gem 'sqlite3'
