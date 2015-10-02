@@ -21,6 +21,7 @@ gem 'omniauth-facebook'
 gem 'mailboxer'
 gem 'gravatar_image_tag'
 gem 'chosen-rails'
+gem 'geokit-rails'
 
 group :development, :test do
 	gem 'sqlite3'

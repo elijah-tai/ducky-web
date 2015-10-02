@@ -16,7 +16,7 @@
 				<h4><%= @request.description %></h4>
 				<p><b>Location:</b> <%= @request.location %></p>
 				<p><b>Posted by:</b> <i><%= @request.user.name if @request.user %></i></p>
-				<p><b>On: </b> <%= @request.created_at.strftime("%-d %B %Y, %H:%M:%S") %> </p>
+				<p><b>On: </b> <%= @request.created_at.strftime("%B %-d %Y, %H:%l %p") %> </p>
 
 				<% if @request.user == current_user %>
 					<div class="actions">
@@ -31,8 +31,9 @@
 						<% end %>
 					</div>
 					<% else %>
+						<%= link_to 'Send message', new_message_path(to: request.user.id), class: 'btn btn-default btn-sm' %>
 				<% end %>
-				
+
 			</div>
 		</div>
 	</div>
