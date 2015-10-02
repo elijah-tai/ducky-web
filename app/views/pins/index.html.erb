@@ -12,12 +12,14 @@
             <%= simple_format(format_output(pin.description))%>
           <b>Location:</b> 
             <%= simple_format(format_output(pin.location))%>
-          <b>Phone #:</b> 
-            <%= simple_format(format_output(pin.user.phone)) %>
           <b>Posted by:</b> 
             <i><%= simple_format(format_output(pin.user.name)) if pin.user %></i>
           <b>On: </b> 
             <p><%= pin.created_at.strftime("%m/%d/%y %l:%M %p") %> UTC </p>
+          
+          <strong><%= pin.user.email %></strong>
+          <% link_to 'Send message', new_message_path(to: pin.user.id), class: 'btn btn-default btn-sm' %>
+          
           <% if current_user && pin.user == current_user %>
             <div class="actions">
               <%= link_to edit_pin_path(pin) do %>
@@ -30,6 +32,9 @@
                 Cancel
               <% end %>
             </div>
+          <% end %>
+          <% link_to new_message_path(to: pin.user.id) do %>
+            Send message
           <% end %>
 
 <!--           # Will show if the pin is not the current_user's -->

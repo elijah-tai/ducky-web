@@ -16,4 +16,6 @@
 //= require jquery.turbolinks
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= require chosen-jquery
+//= require messages
 //= require_tree .

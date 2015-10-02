@@ -6,9 +6,34 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :pins
+  resources :users, only: [:index]
   resources :conversations, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create]
-  
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+  end
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :restore
+    end
+  end
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    collection do
+      delete :empty_trash
+    end
+  end
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :mark_as_read
+    end
+  end
+    
 
 
   # The priority is based upon order of creation: first created -> highest priority.

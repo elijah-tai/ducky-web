@@ -3,36 +3,35 @@
 		<div class="panel panel-default">
 			<div id="show-back-button">
 				<%= link_to pins_path do %>
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					Back
-					<% end %>
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				Back
+				<% end %>
 			</div>
-				
-		<div class="panel-heading center">
-			<%= get_image(@pin.image.url(:medium)) %>
-		</div>
 
-		<div class="panel-body">
-		<h4><%= @pin.description %></h4>
-		<p><b>Location:</b> <%= @pin.location %></p>
-		<p><b>Phone #:</b> <%= @pin.user.phone %></p>
-		<p><b>Posted by:</b> <i><%= @pin.user.name if @pin.user %></i></p>
-		<p><b>On: </b> <%= @pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
-		<% if @pin.user == current_user %>
-			<div class="actions">
-        <%= link_to edit_pin_path do %>
-          <span class="glyphicon glyphicon-pencil"></span>
-          Edit
-        <% end %>
-        ||
-        <%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <span class="glyphicon glyphicon-remove"></span>
-          Cancel
-        <% end %>
-      </div>
-		<% end %>
+			<div class="panel-heading center">
+				<%= get_image(@pin.image.url(:medium)) %>
+			</div>
+
+			<div class="panel-body">
+				<h4><%= @pin.description %></h4>
+				<p><b>Location:</b> <%= @pin.location %></p>
+				<p><b>Posted by:</b> <i><%= @pin.user.name if @pin.user %></i></p>
+				<p><b>On: </b> <%= @pin.created_at.strftime("%a, %b, %g at %u:%M %P UTC") %> </p>
+				<% if @pin.user == current_user %>
+					<div class="actions">
+						<%= link_to edit_pin_path do %>
+						<span class="glyphicon glyphicon-pencil"></span>
+						Edit
+						<% end %>
+						||
+						<%= link_to @pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
+						<span class="glyphicon glyphicon-remove"></span>
+						Cancel
+						<% end %>
+					</div>
+					<% else %>
+				<% end %>
+			</div>
 		</div>
 	</div>
-
 </div>
-

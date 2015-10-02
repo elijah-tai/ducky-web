@@ -1,0 +1,1 @@
+jQuery -> $('.chosen-it').chosen()

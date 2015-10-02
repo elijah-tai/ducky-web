@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
       # user.image = auth.info.image # assuming the user model has an image
     end
   end
+
+  def mailboxer_email(object)
+    email
+  end
 end
