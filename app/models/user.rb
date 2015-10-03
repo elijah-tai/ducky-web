@@ -9,8 +9,6 @@ class User < ActiveRecord::Base
   has_many :requests, dependent: :destroy
 
   validates :name, presence: true
-  validates :phone, length: { is: 10 }
-  validates :phone, numericality: { only_integer: true }
 
   acts_as_messageable 
 

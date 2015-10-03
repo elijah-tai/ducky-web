@@ -13,7 +13,14 @@
     <% end %>
   </div>
 
-  <%= link_to conversation.subject, conversation_path(conversation) %>
+  <%= link_to conversation.subject, conversation_path(conversation) %> 
+  <p>
+  Chatting with:
+  <% conversation.participants.each do |participant| %>
+    <% if participant.name != current_user.name %>
+      <%= participant.name %>
+    <% end %>
+  <% end %>
 
   <p>
   Message:
