@@ -1,4 +1,9 @@
+require 'rubygems'
+require 'geoip'
+# require 'google_places'
+
 module RequestHelper
+
   def get_image(image_url)
 
     if !image_url.include? "missing.png" #Image is present
@@ -7,7 +12,7 @@ module RequestHelper
       image_tag "emptyducky.jpeg"
     end 
 
-  end 
+  end
   
   def format_output(req_desc) #Gets request.description
   	#The purpose of this function is to prevent overflow of the text
@@ -32,4 +37,21 @@ module RequestHelper
     description = desc_array.try(:join, " ")
     return description
   end 
+
+  def get_location_data(ip)
+    db = GeoIP.new(Rails.root.join('app', 'assets', 'dbs', 'GeoLiteCity.dat'))
+    location = db.city(ip)
+    [location.city_name,location.region_name]
+  end
+
+  # def spots_near(latitude, longitude)
+  #   @client = GooglePlaces::Client.new('AIzaSyDatDsGReYLjSVZ2QUM4Nzv0FMoKznYZfA')
+  #   @client.spots(latitude, longitude, :radius => 100, :language => 'en')
+  # end
+
+  # def places_near_ip(ip)
+  #   location = get_location_data(ip)
+  #   spots_near(location.latitude, location.longitude)
+  # end
+
 end

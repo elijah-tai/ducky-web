@@ -21,7 +21,9 @@ gem 'omniauth-facebook'
 gem 'mailboxer'
 gem 'gravatar_image_tag'
 gem 'chosen-rails'
-gem 'geokit-rails'
+gem 'geoip'
+gem 'analytics-ruby', :require => "segment"
+gem 'google_places'
 
 group :development, :test do
 	gem 'sqlite3'
