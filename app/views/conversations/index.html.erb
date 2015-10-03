@@ -1,12 +1,13 @@
 <% page_header "Your Conversations" %>
 
+<p><%= link_to 'New Message', new_message_path, class: 'btn btn-s btn-default', style: 'margin-top: 3%' %></p>
+
 <div class="row" style="margin-top: 2%">
   <div class="col-sm-3">
     <ul class="nav nav-pills nav-stacked">
       <%= mailbox_section 'inbox', @box %>
       <%= mailbox_section 'sent', @box %>
       <%= mailbox_section 'trash', @box %>
-      <p><%= link_to 'New conversation', new_message_path, class: 'btn btn-md btn-primary', style: 'margin-top: 3%' %></p>
     </ul>
   </div>
 
