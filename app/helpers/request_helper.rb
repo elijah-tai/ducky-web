@@ -41,7 +41,7 @@ module RequestHelper
   def get_location_data(ip)
     db = GeoIP.new(Rails.root.join('app', 'assets', 'dbs', 'GeoLiteCity.dat'))
     location = db.city(ip)
-    [location.city_name,location.region_name]
+    location.city_name + ", " + location.region_name
   end
 
   # def spots_near(latitude, longitude)
