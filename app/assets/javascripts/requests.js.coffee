@@ -5,5 +5,6 @@
 $ ->
 	$('#requests').imagesLoaded ->
 		$('#requests').masonry
+			isOriginLeft: true
 			itemSelector: '.box'
 			isFitWidth: true
