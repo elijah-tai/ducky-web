@@ -9,18 +9,36 @@
       <div class="box panel panel-default justify">
         <%= link_to get_image(request.image.url(:medium)), request %>
         <div class="panel-body">
+          <div class="panel-item">
             <%= simple_format(format_output(request.description))%>
-          <b>Location:</b> 
-            <%= simple_format(format_output(request.location))%>
-          <b>Posted by:</b>
-          <div class="media-left">
-            <%= gravatar_for request.user, 45, request.user.name %>
           </div>
-            <i><%= simple_format(format_output(request.user.name)) if request.user %></i>
-          <p><%= distance_of_time_in_words(Time.now(), request.created_at) %> ago</p>
+          <table>
+          <tr>
+            <th>Location: </th>
+            <td><%= request.location %></td>
+          </tr>
+          
+          <tr>
+            <th>Asker: </th>
+            <td>
+              <div class="media-left">
+                <%= gravatar_for request.user, 40, request.user.name %>
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <th></th>
+            <td><%= request.user.name if request.user %></td>
+          </tr>
+          </table>
+          
+          <div class="panel-item">
+            <p><%= distance_of_time_in_words(Time.now(), request.created_at) %> ago</p>
+          </div>
 
           <% if current_user && request.user == current_user %>
-            <div class="actions">
+            <div class="actions panel-item">
               <%= link_to edit_request_path(request) do %>
                 <span class="glyphicon glyphicon-pencil"></span>
                 Edit
@@ -32,7 +50,9 @@
               <% end %>
             </div>
           <% else %>
-              <%= link_to 'Send message', new_message_path(to: request.user.id), class: 'btn btn-primary btn-sm' %>
+          <div class="panel-item">
+              <%= link_to 'Send message', new_message_path(to: request.user.id), class: 'btn btn-primary btn-sm', style: "text-align" %>
+          </div>
           <% end %>
 
 <!--           # Will show if the request is not the current_user's -->

@@ -7,10 +7,28 @@
 }
 
 .box {
-	margin: 5px;
-	width: 214px;
+	margin: 4px;
+	width: 220px;
 }
 
 .box img {
 	width: 100%;
+}
+
+table {
+	width: 100%;
+}
+
+th {
+	width: 30px;
+	padding: 5px;
+}
+
+td {
+	padding: 2px;
+	height: 10px;
+}
+
+.panel-item {
+	padding: 5px;
 }
