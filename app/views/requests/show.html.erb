@@ -31,7 +31,9 @@
 						<% end %>
 					</div>
 					<% else %>
+						<% if user_signed_in? %>
 						<%= link_to 'Send message', new_message_path(to: @request.user.id), class: 'btn btn-primary btn-sm' %>
+						<% end %>
 				<% end %>
 
 			</div>
