@@ -24,6 +24,7 @@ gem 'chosen-rails'
 gem 'geoip'
 gem 'analytics-ruby', :require => "segment"
 gem 'google_places'
+gem 'newrelic_rpm'
 
 group :development, :test do
 	gem 'sqlite3'

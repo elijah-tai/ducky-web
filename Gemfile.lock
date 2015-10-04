@@ -129,6 +129,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    newrelic_rpm (3.13.2.302)
     nokogiri (1.5.11)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -251,6 +252,7 @@ DEPENDENCIES
   mailboxer
   mailcatcher
   masonry-rails (~> 0.2.0)
+  newrelic_rpm
   omniauth-facebook
   paperclip (~> 3.0)
   pg
