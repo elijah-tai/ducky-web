@@ -27,6 +27,9 @@ GEM
       tzinfo (~> 0.3.37)
     analytics-ruby (2.0.13)
     arel (4.0.2)
+    authority (3.1.0)
+      activesupport (>= 3.0.0)
+      rake (>= 0.8.7)
     autoprefixer-rails (6.0.3)
       execjs
       json
@@ -240,6 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   analytics-ruby
+  authority
   aws-sdk (~> 1.16.1)
   bootstrap-sass
   chosen-rails

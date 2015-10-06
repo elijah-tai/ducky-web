@@ -27,6 +27,7 @@ gem 'google_places'
 gem 'newrelic_rpm'
 gem 'intercom-rails'
 gem 'groupify'
+gem 'authority'
 
 group :development, :test do
 	gem 'sqlite3'
