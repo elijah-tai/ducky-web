@@ -14,8 +14,30 @@
 
 			<div class="panel-body">
 				<h4><%= @request.description %></h4>
-				<p><b>Location:</b> <%= @request.location %></p>
-				<p><b>Posted by:</b> <i><%= @request.user.name if @request.user %></i></p>
+          <table>
+          <tr>
+            <th>Location: </th>
+            <td><%= @request.location %></td>
+          </tr>
+          
+          <tr>
+            <th>Asker: </th>
+            <td>
+              <div class="media-left">
+                <%= gravatar_for @request.user, 40, @request.user.name %>
+              </div>
+            </td>
+          </tr>
+          
+          <tr>
+            <th></th>
+            <td><%= @request.user.name if @request.user %></td>
+          </tr>
+          <tr>
+          <th>Posted In: </th>
+          <td><%= link_to @request.group.name, @request.group %></td>
+          </tr>
+          </table>
 				<p><b>On: </b> <%= @request.created_at.strftime("%B %-d %Y, %H:%l %p") %> </p>
 
 				<% if @request.user == current_user %>

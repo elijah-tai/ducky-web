@@ -1,3 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Requests in <%= @group.name %></h2>
+
 <%= render 'pages/home' unless user_signed_in? %>
 
 <h4>
@@ -6,9 +10,8 @@
   </h3>
 </h4>
 
-
 <div id="requests" class="transitions-enabled justify">
-  <% @requests.each do |request| %>
+<% Request.where(group_id: @group.id).each do |request| %>
     <div class="requests-view justify">
       <div class="box panel panel-default justify">
         <%= link_to get_image(request.image.url(:medium)), request %>
@@ -76,6 +79,9 @@
   <% end %>
 </div>
 
-<div class="center">
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-</div>
+<!-- TODO: Add pagination!!! -->
+
+Group Members:
+<% @group.members.each do |member| %>
+	<li><%= member.name %></li>
+<% end %>
