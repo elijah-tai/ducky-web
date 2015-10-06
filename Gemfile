@@ -25,6 +25,7 @@ gem 'geoip'
 gem 'analytics-ruby', :require => "segment"
 gem 'google_places'
 gem 'newrelic_rpm'
+gem 'intercom-rails'
 
 group :development, :test do
 	gem 'sqlite3'
