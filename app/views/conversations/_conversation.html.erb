@@ -17,8 +17,10 @@
   <p>
   Chatting with:
   <% conversation.participants.each do |participant| %>
-    <% if participant.name != current_user.name %>
-      <%= participant.name %>
+    <% if participant %>
+      <% if participant.name != current_user.name %>
+        <%= participant.name %>
+      <% end %> 
     <% end %>
   <% end %>
 
