@@ -35,6 +35,10 @@
             <th></th>
             <td><%= request.user.name if request.user %></td>
           </tr>
+          <tr>
+          <th>Group: </th>
+          <td><%= link_to Group.find_by(id: request.group_id).name, Group.find_by(id: request.group_id) if request.group_id %></td>
+          </tr>
           </table>
           
           <div class="panel-item">

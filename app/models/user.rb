@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   :confirmable, :omniauthable, :omniauth_providers => [:facebook]
 
   has_many :requests, dependent: :destroy
+  
+  groupify :group_member
+  groupify :named_group_member
 
   validates :name, presence: true
 

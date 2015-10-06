@@ -12,6 +12,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = current_user.requests.build
+    @chosen_group = Group.find_by(id: params[:to].to_i) if params[:to]
   end
 
   def edit
@@ -52,6 +53,6 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.require(:request).permit(:description, :image, :location)
+      params.require(:request).permit(:description, :image, :location, :group_id)
     end
 end

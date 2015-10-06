@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+			<h2>Group Members</h2>
+
+			<% @group.members.each do |member| %>
+				<%= member.name %>
+			<% end %>
+
+			<div class="panel-body">
+
+				<div class="actions">
+					<%= link_to edit_group_path do %>
+					<span class="glyphicon glyphicon-pencil"></span>
+					Edit Group
+					<% end %>
+					||
+					<%= link_to groups_path do %>
+					Back
+					<% end %>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
