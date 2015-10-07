@@ -3,23 +3,29 @@
 		<div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <%= image_tag("uoft.gif", height:"150", width:"150", style: "border-radius: .5em") %>
+          <p><%= image_tag("uoft.gif", height:"200", width:"150", style: "border-radius: .5em") %></p>
+          <div style="padding: 3%">
           <p>Ducky is University of Toronto's public requests board, where you can ask your fellow peers to do small favours for you.</p>
           <p><%= link_to "Sign Up", new_user_registration_path, class:"btn btn-primary btn-lg"%></p>
+          </div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <%= image_tag("example.png", height:"150", width:"150", style: "border-radius: .5em") %>
+          <%= image_tag("example.png", height:"200", width:"180", style: "border-radius: .5em") %>
+          <div style="padding: 3%">
           <p>Stuck at Robarts and don't want to lose your study spot? Use Ducky to ask someone to get you a coffee. </p>
           <p><a href="/requests/new" class="btn btn-default btn-lg" role="button">
 				Post A Request
 				</a></p>
+        </div>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <%= image_tag("logo.jpg", height:"150", width:"150", style: "border-radius: .5em") %>
+          <%= image_tag("logo.jpg", height:"200", width:"180", style: "border-radius: .5em") %>
+          <div style="padding: 3%">
           <p>Join our community of helpful people, who are making each others' lives a little bit easier. Let's make UofT a more helpful place.</p>
           <p><a href="/requests" class="btn btn-default btn-lg" role="button">
 		        			See Requests
 		        	</a></p>
+              </div>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       </div>
