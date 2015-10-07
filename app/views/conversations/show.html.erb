@@ -1,15 +1,5 @@
 <% page_header "Conversation" %>
 
-<div style="margin-left: 5%">
-<p>Chatting with:
-    <% @conversation.participants.each do |participant| %>
-      <% if participant.name != current_user.name %>
-        <%= participant.name %>
-      <% end %>
-    <% end %>
-</p>
-</div>
-
 <div class="panel panel-default">
   <div class="panel-heading"><%= @conversation.subject %></div>
 
