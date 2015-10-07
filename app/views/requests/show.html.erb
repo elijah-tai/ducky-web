@@ -35,11 +35,7 @@
           </tr>
           <tr>
           <th>Posted In: </th>
-          <td>
-          <% unless Group.find_by(id: request.group_id).nil? %> 
-            <%= link_to Group.find_by(id: request.group_id).name, Group.find_by(id: request.group_id) %>
-          <% end %>
-          </td>
+          <td><%= link_to @request.group.name, @request.group %></td>
           </tr>
           </table>
 				<p><b>On: </b> <%= @request.created_at.strftime("%B %-d %Y, %H:%l %p") %> </p>
