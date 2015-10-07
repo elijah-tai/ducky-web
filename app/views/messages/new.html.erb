@@ -8,12 +8,12 @@
 
   <div class="form-group">
     <%= label_tag 'message[body]', 'Message' %>
-    <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control', required: true %>
+    <%= text_area_tag 'message[body]', nil, cols: 5, rows: 5, class: 'form-control', required: true %>
   </div>
 
   <div class="form-group">
     <%= label_tag 'recipients', 'Choose recipient' %>
-    <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: false, class: 'form-control chosen-it', required: true%>
+    <%= select_tag 'recipients', recipients_options(@chosen_recipient), multiple: false, class: 'btn btn-default dropdown-toggle form-control chosen-it', required: true, id: "dropdownMenu1" %>
   </div>
 
   <%= submit_tag 'Send', class: 'btn btn-primary' %>
