@@ -8,13 +8,16 @@
 				<% end %>
 			</div>
 
-			<div class="panel-heading center">
-				<%= get_image(@request.image.url(:medium)) %>
-			</div>
+<!-- 			<div class="panel-heading center">
+			</div> -->
 
 			<div class="panel-body">
-				<h4><%= @request.description %></h4>
           <table>
+          <tr>
+          	<td>
+          	<h4><%= @request.description %></h4>
+          	</td>
+          </tr>
           <tr>
             <th>Location: </th>
             <td><%= @request.location %></td>
@@ -34,7 +37,7 @@
             <td><%= @request.user.name if @request.user %></td>
           </tr>
           <tr>
-          <th>Posted In: </th>
+          <th>Group: </th>
                       <td>
               <% unless Group.find_by(id: @request.group_id).nil? %> 
             		<%= link_to Group.find_by(id: @request.group_id).name, Group.find_by(id: @request.group_id) %>
@@ -53,7 +56,7 @@
 						||
 						<%= link_to @request, method: :delete, data: { confirm: 'Are you sure?' } do %>
 						<span class="glyphicon glyphicon-remove"></span>
-						Cancel
+						Remove
 						<% end %>
 					</div>
 					<% else %>

@@ -1,17 +1,21 @@
 require 'rubygems'
 require 'geoip'
+require 'google-search'
 # require 'google_places'
 
 module RequestHelper
 
   def get_image(image_url)
-
     if !image_url.include? "missing.png" #Image is present
       image_tag image_url
     else
       image_tag "emptyducky.jpeg"
     end 
+  end
 
+  def find_item(query)
+    result = Google::Search::Image.new(query: query, :image_size => small)
+    result
   end
   
   def format_output(req_desc) #Gets request.description

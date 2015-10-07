@@ -1,40 +1,40 @@
 <%= form_for @request, html: { multipart: true } do |f| %>
 
 <div class="panel-body">
-    <% if @request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+  <% if @request.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
 
-      <ul>
+    <ul>
       <% @request.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="form-group">
+<!--   <div class="form-group">
     <%= f.label :image %>
     <p> You can also upload from your mobile device! </p>
     <%= f.file_field :image, class: "form-control" %>
-  </div>
+  </div> -->
 
   <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label "What's your request?" %>
+    <%= f.text_field :description, class: "form-control"%>
   </div>
 
-  Your current location: <%= get_location_data(current_user.current_sign_in_ip) %>
+  Your current location: <%= get_location_data("172.4.5.2") %>
   <!-- current_user.current_sign_in_ip -->
 
   <div class="form-group" style="margin-top: 2%">
     <%= f.label 'Closest landmark/intersection' %>
-    <%= f.text_field :location, class: "form-control" %>
+    <%= f.text_field :location, class: "form-control", id: "landmark" %>
   </div>
 
   <div class="form-group">
-    <%= f.label 'Choose group to post in' %>
-    <%= f.select :group_id, target_group_options(@chosen_group), multiple: false, class: 'form-control chosen-it', required: true %>
+    <%= f.label 'Choose a group to post in' %>
+    <%= f.select :group_id, target_group_options(@chosen_group), multiple: false, class: 'btn btn-default dropdown-toggle chosen-it', required: true %>
   </div>
 
   <div class="form-group">

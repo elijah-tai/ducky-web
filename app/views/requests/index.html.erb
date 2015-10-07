@@ -10,9 +10,9 @@
 <div id="requests" class="transitions-enabled justify">
   <% @requests.each do |request| %>
     <div class="requests-view justify">
-      <div class="box panel panel-default justify">
-        <%= link_to get_image(request.image.url(:medium)), request %>
+      <div class="box panel panel-default jusify">
         <div class="panel-body">
+
           <div class="panel-item">
             <%= simple_format(format_output(request.description))%>
           </div>
@@ -58,7 +58,7 @@
               ||
               <%= link_to request, method: :delete, data: { confirm: 'Are you sure?' } do %>
                 <span class="glyphicon glyphicon-remove"></span>
-                Cancel
+                Remove
               <% end %>
             </div>
           <% else %>

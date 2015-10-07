@@ -28,6 +28,10 @@ gem 'newrelic_rpm'
 gem 'intercom-rails'
 gem 'groupify'
 gem 'authority'
+gem 'google-search'
+gem 'mini_magick'
+gem 'fog'
+gem 'carrierwave'
 
 group :development, :test do
 	gem 'sqlite3'
