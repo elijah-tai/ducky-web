@@ -33,11 +33,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.label 'Choose a group to post in' %>
-    <%= f.select :group_id, target_group_options(@chosen_group), multiple: false, class: 'btn btn-default dropdown-toggle chosen-it', required: true %>
-  </div>
-
-  <div class="form-group">
     <%= f.label 'Choose group to post in' %>
     <%= f.select :group_id, target_group_options(@chosen_group), multiple: false, class: 'form-control chosen-it', required: true %>
   </div>
