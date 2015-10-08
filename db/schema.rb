@@ -113,6 +113,7 @@ ActiveRecord::Schema.define(version: 20151006221119) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "location"
+    t.string   "group"
     t.integer  "group_id"
   end
 
