@@ -11,7 +11,7 @@
 </h4>
 
 <div id="requests" class="transitions-enabled justify">
-<% Request.where(group_id: @group.id).each do |request| %>
+<% @requests.each do |request| %>
     <div class="requests-view justify">
       <div class="box panel panel-default justify">
         <div class="panel-body">
