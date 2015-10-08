@@ -3,32 +3,14 @@
 <%= link_to 'New Group', new_group_path, class: "btn btn-primary" %>
 
 <table>
-<<<<<<< HEAD
-=======
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
->>>>>>> e492340f62aa7894059f3f038be71f626ffcbbb1
   <tbody>
     <% @groups.each do |group| %>
       <tr>
         <td><h3><%= link_to group.name, group %></h3></td>
 
         <!-- Need to add authentication, only group administrator can edit and delete -->
-<<<<<<< HEAD
 <!--         <td><%= link_to 'Edit', edit_group_path(group), class:"btn btn-info" %></td>
         <td><%= link_to 'Delete', group, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-=======
-        <td><%= link_to 'Edit', edit_group_path(group), class:"btn btn-info" %></td>
-
-        <td><%= link_to 'Delete', group, class: "btn btn-warning", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        
->>>>>>> e492340f62aa7894059f3f038be71f626ffcbbb1
       </tr>
     <% end %>
   </tbody>
