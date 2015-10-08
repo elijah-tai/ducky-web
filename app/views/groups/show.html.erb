@@ -11,7 +11,7 @@
 </h4>
 
 <div id="requests" class="transitions-enabled justify">
-<% @requests.each do |request| %>
+<% Request.where(group_id: @group.id).order("created_at DESC").paginate(:page => params[:page], :per_page => 10).each do |request| %>
     <div class="requests-view justify">
       <div class="box panel panel-default justify">
         <div class="panel-body">
