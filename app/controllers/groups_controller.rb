@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    @requests = Request.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /groups/1
