@@ -28,8 +28,6 @@ class RequestsController < ApplicationController
         user_id: current_user.id, 
         event: 'Request Created', 
         properties: {
-          description: Request.find(params[:id]).description,
-          location: Request.find(params[:id]).location
       })
       redirect_to @request, notice: 'Request was successfully created.'
     else
