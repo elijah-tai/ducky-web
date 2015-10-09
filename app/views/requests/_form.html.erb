@@ -24,7 +24,7 @@
     <%= f.text_field :description, class: "form-control"%>
   </div>
 
-  Your current location: <%= get_location_data("172.45.67.89") %>
+  Your current location: <%= get_location_data(current_user.current_sign_in_ip) %>
   <!-- current_user.current_sign_in_ip -->
 
   <div class="form-group" style="margin-top: 2%">
