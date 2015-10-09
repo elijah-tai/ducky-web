@@ -2,6 +2,12 @@ class MessagesController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    Analytics.track(
+        user_id: current_user.id,
+        user_name: current_user.name, 
+        event: 'Message Initiated', 
+        properties: {
+      })
   	@chosen_recipient = User.find_by(id: params[:to].to_i) if params[:to]
   end
 

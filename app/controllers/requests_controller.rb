@@ -25,9 +25,12 @@ class RequestsController < ApplicationController
     @request = current_user.requests.build(request_params)
     if @request.save
       Analytics.track(
-        user_id: current_user.id, 
+        user_id: current_user.id,
+        user_name: current_user.name, 
         event: 'Request Created', 
         properties: {
+          description: @request.description,
+          location: @request.location
       })
       redirect_to @request, notice: 'Request was successfully created.'
     else
@@ -37,6 +40,14 @@ class RequestsController < ApplicationController
 
   def update
     if @request.update(request_params)
+      Analytics.track(
+        user_id: current_user.id,
+        user_name: current_user.name, 
+        event: 'Request Updated', 
+        properties: {
+          description: @request.description,
+          location: @request.location
+      })
       redirect_to @request, notice: 'Request was successfully updated.'
     else
       render action: 'edit'
@@ -44,6 +55,14 @@ class RequestsController < ApplicationController
   end
 
   def destroy
+    Analytics.track(
+        user_id: current_user.id,
+        user_name: current_user.name, 
+        event: 'Request Removed', 
+        properties: {
+          description: @request.description,
+          location: @request.location
+      })
     @request.destroy
     redirect_to requests_url
   end
