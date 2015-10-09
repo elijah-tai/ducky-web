@@ -354,7 +354,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  analytics-ruby
+  analytics-ruby (~> 2.0.0)
   authority
   aws-sdk (~> 1.16.1)
   bootstrap-sass

@@ -22,7 +22,6 @@ gem 'mailboxer'
 gem 'gravatar_image_tag'
 gem 'chosen-rails'
 gem 'geoip'
-gem 'analytics-ruby', :require => "segment"
 gem 'google_places'
 gem 'newrelic_rpm'
 gem 'intercom-rails'
@@ -32,6 +31,7 @@ gem 'google-search'
 gem 'mini_magick'
 gem 'fog'
 gem 'carrierwave'
+gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
 group :development, :test do
 	gem 'sqlite3'

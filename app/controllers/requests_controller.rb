@@ -24,6 +24,13 @@ class RequestsController < ApplicationController
   def create
     @request = current_user.requests.build(request_params)
     if @request.save
+      Analytics.track(
+        user_id: current_user.id, 
+        event: 'Request Created', 
+        properties: {
+          description: Request.params.find(params[:id]).description,
+          location: Request.params.find(params[:id]).location
+      })
       redirect_to @request, notice: 'Request was successfully created.'
     else
       render action: 'new'
