@@ -15,12 +15,6 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
-    Analytics.track(
-        user_id: current_user.id,
-        user_name: current_user.name,
-        event: 'New Group Created', 
-        properties: {
-     })
     @group = Group.new
   end
 
