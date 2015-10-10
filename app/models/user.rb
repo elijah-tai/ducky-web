@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   groupify :named_group_member
 
   validates :name, presence: true
+  validates_uniqueness_of :name
 
   acts_as_messageable 
 
