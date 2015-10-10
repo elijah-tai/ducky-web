@@ -4,10 +4,6 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    Analytics.track(
-        event: 'Visited Groups Index', 
-        properties: {
-      })
     @groups = Group.all
     @requests = Request.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
   end
@@ -19,6 +15,12 @@ class GroupsController < ApplicationController
 
   # GET /groups/new
   def new
+    Analytics.track(
+        user_id: current_user.id,
+        user_name: current_user.name,
+        event: 'New Group Created', 
+        properties: {
+     })
     @group = Group.new
   end
 
