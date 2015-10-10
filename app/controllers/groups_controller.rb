@@ -5,8 +5,6 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     Analytics.track(
-        user_id: current_user.id,
-        user_name: current_user.name, 
         event: 'Visited Groups Index', 
         properties: {
       })
