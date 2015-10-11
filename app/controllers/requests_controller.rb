@@ -5,6 +5,15 @@ class RequestsController < ApplicationController
 
   def index
     @requests = Request.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
+    if current_user
+      Analytics.identify({
+        user_id: current_user.id,
+        traits: {
+          email: current_user.email,
+          name: current_user.name
+        }
+        })
+    end
   end
 
   def show
