@@ -44,7 +44,7 @@ class GroupsController < ApplicationController
         properties: {
         }
         })
-    end
+    end 
   end
 
   # GET /groups/1/edit
@@ -69,6 +69,7 @@ class GroupsController < ApplicationController
               group_name: @group.name
             }
             })
+        end
       else
         format.html { render action: 'new' }
         format.json { render json: @group.errors, status: :unprocessable_entity }
