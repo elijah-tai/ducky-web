@@ -8,11 +8,12 @@ class GroupsController < ApplicationController
     @groups = Group.all
     @requests = Request.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 10)
     if current_user
-      Analytics.track(
+      Analytics.track({
         user_id: current_user.id,
         user_name: current_user.name, 
         event: 'Visited Groups Index', 
         properties: {
+      }
       })
     end
   end
@@ -20,11 +21,29 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    if current_user
+      Analytics.track({
+        user_id: current_user.id,
+        user_name: current_user.name,
+        event: 'Visited Group',
+        properties: {
+          group_name: @group.name
+        } 
+      })
+    end
   end
 
   # GET /groups/new
   def new
     @group = Group.new
+    if current_user
+      Analytics.track({
+        user_id: current_user.id,
+        user_name: current_user.name,
+        event: 'Group Creation Initiated',
+        properties: {
+        }
+        })
   end
 
   # GET /groups/1/edit
@@ -40,6 +59,15 @@ class GroupsController < ApplicationController
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
         format.json { render action: 'show', status: :created, location: @group }
+        if current_user
+          Analytics.track({
+            user_id: current_user.id,
+            user_name: current_user.name,
+            event: 'Group Created',
+            properties: {
+              group_name: @group.name
+            }
+            })
       else
         format.html { render action: 'new' }
         format.json { render json: @group.errors, status: :unprocessable_entity }
