@@ -44,6 +44,7 @@ class GroupsController < ApplicationController
         properties: {
         }
         })
+    end
   end
 
   # GET /groups/1/edit

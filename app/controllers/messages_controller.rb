@@ -15,6 +15,14 @@ class MessagesController < ApplicationController
     recipients = User.where(id: params['recipients'])
     conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
     flash[:success] = "Message has been sent!"
+    Analytics.track({
+      user_id: current_user.id,
+      user_name: current_user.name,
+      event: 'Message Sent',
+      properties: {
+        # Need to add message properties here
+      }
+      })
     redirect_to conversation_path(conversation)
   end
 
